@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
-import { Avis } from '../models';
+import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
+import { Avis, Collegue } from '../models';
 
 @Component({
   selector: 'app-avis',
@@ -9,6 +9,7 @@ import { Avis } from '../models';
 export class AvisComponent implements OnInit {
 
   @Output() avis:EventEmitter<Avis> = new EventEmitter<Avis>();
+  @Input() collegue!:Collegue;
 
   constructor() { }
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import { Collegue } from '../models';
 
 @Component({
@@ -9,6 +9,7 @@ import { Collegue } from '../models';
 export class CollegueComponent implements OnInit {
 
   @Input() collegue!: Collegue;
+  @Output() limiteScore:EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -18,6 +19,10 @@ export class CollegueComponent implements OnInit {
 
   traiterAvis(val: number){
     this.collegue.score += val;
+    if(this.collegue.score > 1000) this.limiteScore.emit(true);
+    if(this.collegue.score < -1000) this.limiteScore.emit(false);
   }
+
+
 
 }

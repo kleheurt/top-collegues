@@ -3,6 +3,6 @@
   <div class="card-body">
     <h5 class="card-title">{{collegue.pseudo}}</h5>
     <p class="card-text">score : {{collegue.score}}</p>
-    <app-avis (avis)="traiterAvis($event)"></app-avis>
+    <app-avis [collegue]="collegue" (avis)="traiterAvis($event)"></app-avis>
   </div>
 </div>
