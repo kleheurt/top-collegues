@@ -1,4 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
+import { CollegueService } from '../collegue.service';
 import { Collegue } from '../models';
 
 @Component({
@@ -19,9 +20,11 @@ export class AccueilComponent implements OnInit {
     {pseudo : "Napoléon", score : 100, photoUrl: "https://icons.iconarchive.com/icons/3xhumed/mega-games-pack-38/256/Napoleon-Total-War-1-icon.png"}
   ];
 
-  constructor() { }
+  constructor(private collegueService: CollegueService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<any> {
+    this.collegues = await this.collegueService.getCollegues();
   }
+
 
 }

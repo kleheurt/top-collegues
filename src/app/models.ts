@@ -4,6 +4,11 @@ export interface Collegue{
   photoUrl:string;
 }
 
+export interface CollegueDto{
+  pseudo:string,
+  score:number,
+  photo:string
+}
 
 export enum Avis{
   AIMER=100,
