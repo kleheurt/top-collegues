@@ -1,8 +1,8 @@
 <div class="card text-center rounded-0 border-dark" style="width: 18rem;">
   <img class="card-img-top" src={{collegue.photoUrl}}>
   <div class="card-body">
-    <h5 class="card-title">{{collegue.pseudo}}</h5>
-    <p class="card-text">score : {{collegue.score}}</p>
+    <h5 class="card-title">{{collegue.pseudo | uppercase}}</h5>
+    <p class="card-text">{{collegue.score | score}}</p>
     <app-avis [collegue]="collegue" (avis)="traiterAvis($event)"></app-avis>
   </div>
 </div>
