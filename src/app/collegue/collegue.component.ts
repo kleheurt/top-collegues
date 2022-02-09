@@ -14,7 +14,6 @@ export class CollegueComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.collegue = {pseudo : "Napoléon", score : 100, photoUrl: "https://icons.iconarchive.com/icons/3xhumed/mega-games-pack-38/256/Napoleon-Total-War-1-icon.png"};
   }
 
   traiterAvis(val: number){
