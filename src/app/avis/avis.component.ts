@@ -24,4 +24,12 @@ export class AvisComponent implements OnInit {
     this.avis.emit(Avis.DETESTER);
   }
 
+  aimable(){
+    return this.collegue.score > 1000;
+  }
+
+  detestable(){
+    return this.collegue.score < -1000;
+  }
+
 }
