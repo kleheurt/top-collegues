@@ -1,0 +1,14 @@
+<div *ngIf="visible" class="card mb-3 rounded-0 border-dark" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img [src]="vote.collegue.photo" class="card-img" >
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{vote.collegue.pseudo | uppercase}}</h5>
+        <p class="card-text">{{vote.collegue.prenom}} est {{vote.avis | conjuguer}}, son score est désormais de {{vote.collegue.score}} :O</p>
+      </div>
+      <button type="button" class="btn btn-outline-dark rounded-0 btn-sm align-right " (click)="supprimer()">Supprimer</button>
+    </div>
+  </div>
+</div>

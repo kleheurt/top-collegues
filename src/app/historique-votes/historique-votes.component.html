@@ -1,0 +1,8 @@
+<h2>HISTORIQUE VOTES</h2>
+<div *ngIf="votes | async as listeVotes">
+  <ul class="list-group list-unstyled" >
+    <li *ngFor="let vote of listeVotes">
+      <app-vote [vote]="vote"></app-vote>
+    </li>
+  </ul>
+</div>

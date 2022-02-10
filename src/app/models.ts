@@ -10,6 +10,13 @@ export interface CollegueDto{
   photo:string
 }
 
+export interface CollegueVote{
+  pseudo:string,
+  score:number,
+  photo:string,
+  prenom:string
+}
+
 export enum Avis{
   AIMER=100,
   DETESTER=-100,
@@ -23,8 +30,8 @@ export interface VoteDto{
 }
 
 export interface Vote{
-  avis:AvisDto;
-  collegue:CollegueDto;
+  avis:string;
+  collegue:CollegueVote;
   score:number;
 }
 
