@@ -12,5 +12,7 @@ export interface CollegueDto{
 
 export enum Avis{
   AIMER=100,
-  DETESTER=-100
+  DETESTER=-100,
+  STOP_AIMER = 1000,
+  STOP_DETESTER = -1000
 }

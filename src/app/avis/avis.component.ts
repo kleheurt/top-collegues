@@ -8,8 +8,9 @@ import { Avis, Collegue } from '../models';
 })
 export class AvisComponent implements OnInit {
 
-  @Output() avis:EventEmitter<Avis> = new EventEmitter<Avis>();
-  @Input() collegue!:Collegue;
+  @Output() avis = new EventEmitter<Avis>();
+  @Input() aimable!:boolean;
+  @Input() detestable!:boolean;
 
   constructor() { }
 
@@ -24,12 +25,5 @@ export class AvisComponent implements OnInit {
     this.avis.emit(Avis.DETESTER);
   }
 
-  aimable(){
-    return this.collegue.score > 1000;
-  }
-
-  detestable(){
-    return this.collegue.score < -1000;
-  }
 
 }
