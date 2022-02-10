@@ -1,6 +1,5 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { CollegueService } from '../collegue.service';
-import { Collegue } from '../models';
+import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-accueil',
@@ -9,22 +8,19 @@ import { Collegue } from '../models';
 })
 export class AccueilComponent implements OnInit {
 
-  @Output() collegues:Array<Collegue> = [
-    {pseudo : "Napoléon", score : 100, photoUrl: "https://icons.iconarchive.com/icons/3xhumed/mega-games-pack-38/256/Napoleon-Total-War-1-icon.png"},
-    {pseudo : "Napoléon", score : 100, photoUrl: "https://icons.iconarchive.com/icons/3xhumed/mega-games-pack-38/256/Napoleon-Total-War-1-icon.png"},
-    {pseudo : "Napoléon", score : 100, photoUrl: "https://icons.iconarchive.com/icons/3xhumed/mega-games-pack-38/256/Napoleon-Total-War-1-icon.png"},
-    {pseudo : "Napoléon", score : 100, photoUrl: "https://icons.iconarchive.com/icons/3xhumed/mega-games-pack-38/256/Napoleon-Total-War-1-icon.png"},
-    {pseudo : "Napoléon", score : 100, photoUrl: "https://icons.iconarchive.com/icons/3xhumed/mega-games-pack-38/256/Napoleon-Total-War-1-icon.png"},
-    {pseudo : "Napoléon", score : 100, photoUrl: "https://icons.iconarchive.com/icons/3xhumed/mega-games-pack-38/256/Napoleon-Total-War-1-icon.png"},
-    {pseudo : "Napoléon", score : 100, photoUrl: "https://icons.iconarchive.com/icons/3xhumed/mega-games-pack-38/256/Napoleon-Total-War-1-icon.png"},
-    {pseudo : "Napoléon", score : 100, photoUrl: "https://icons.iconarchive.com/icons/3xhumed/mega-games-pack-38/256/Napoleon-Total-War-1-icon.png"}
-  ];
+  rafraichirSubject:Subject<boolean>;
 
-  constructor(private collegueService: CollegueService) { }
-
-  async ngOnInit(): Promise<any> {
-    this.collegues = await this.collegueService.getCollegues();
+  constructor() {
+    this.rafraichirSubject = new Subject<boolean>();
   }
+
+  ngOnInit() {
+  }
+
+  rafraichir(){
+    this.rafraichirSubject.next(true);
+  }
+
 
 
 }

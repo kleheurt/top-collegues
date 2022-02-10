@@ -1,5 +1,5 @@
-<div class="row">
-  <div class="col-3 py-3" *ngFor="let c of collegues" >
+<div class="row" *ngIf="(collegues | async) as listeCol">
+  <div class="col-3 py-3" *ngFor="let c of listeCol" >
     <app-collegue [collegue]="c"></app-collegue>
   </div>
 </div>

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import { Avis, Collegue } from '../models';
+import { Component, Input, OnInit} from '@angular/core';
+import { DataService } from '../data.service';
+import { Avis, Collegue, VoteDto } from '../models';
 
 @Component({
   selector: 'app-collegue',
@@ -10,14 +11,15 @@ export class CollegueComponent implements OnInit {
 
   @Input() collegue!: Collegue;
 
-  constructor() { }
+  constructor(private collegueService:DataService) { }
 
   ngOnInit(): void {
   }
 
   traiterAvis(val: number){
     this.collegue.score += val;
-
+    const vote:VoteDto = {avis:(val > 0 ? "AIMER" : "DETESTER"), pseudo:this.collegue.pseudo};
+    this.collegueService.voter(vote).subscribe(x => console.log(x));
   }
 
   estAimable(){

@@ -16,3 +16,18 @@ export enum Avis{
   STOP_AIMER = 1000,
   STOP_DETESTER = -1000
 }
+
+export interface VoteDto{
+  avis:string;
+  pseudo:string;
+}
+
+export interface Vote{
+  avis:AvisDto;
+  collegue:CollegueDto;
+  score:number;
+}
+
+export enum AvisDto{
+  "AIMER", "DETESTER"
+}

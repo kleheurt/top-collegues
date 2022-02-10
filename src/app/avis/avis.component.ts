@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
-import { Avis, Collegue } from '../models';
+import { Avis } from '../models';
 
 @Component({
   selector: 'app-avis',
