@@ -10,7 +10,7 @@ export class VoteComponent implements OnInit {
 
   visible = true;
 
-  @Input() vote!: Vote;
+  @Input() vote?: Vote;
 
   constructor() { }
 

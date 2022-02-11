@@ -17,6 +17,13 @@ export interface CollegueVote{
   prenom:string
 }
 
+export interface CreerCollegueDto{
+  nom:string,
+  photo:string,
+  prenom:string,
+  pseudo:string
+}
+
 export enum Avis{
   AIMER=100,
   DETESTER=-100,

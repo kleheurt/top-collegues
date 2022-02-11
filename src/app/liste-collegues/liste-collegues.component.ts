@@ -12,16 +12,11 @@ export class ListeColleguesComponent implements OnInit {
 
   collegues:Observable<Array<Collegue>>;
 
-  @Input() rafraichirSubject!: Subject<boolean>;
-
   constructor(private collegueService: DataService) {
-    this.collegues = this.collegueService.listerCollegues();
+    this.collegues = this.collegueService.abonner();
   }
 
   ngOnInit(): void {
-    this.rafraichirSubject.subscribe(() => {
-      this.collegues = this.collegueService.listerCollegues();
-    });
   }
 
 

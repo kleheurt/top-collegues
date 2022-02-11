@@ -10,7 +10,7 @@ import { Vote } from '../models';
 })
 export class HistoriqueVotesComponent implements OnInit {
 
-  votes!: Observable<Array<Vote>>;
+  votes: Observable<Array<Vote>>;
 
   constructor(private voteService:DataService) {
     this.votes = this.voteService.listerVotes();
