@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DataService } from '../data.service';
-import { Collegue, CreerCollegueDto } from '../models';
-import { NomPrenomValidatorDirective } from '../validators/nom-prenom-validator.directive';
+import { CreerCollegueDto } from '../models';
 
 @Component({
   selector: 'app-nouveau-collegue-template-form',
@@ -13,7 +12,7 @@ export class NouveauCollegueTemplateFormComponent implements OnInit {
 
   collegue:CreerCollegueDto = {nom:"",photo:"", prenom:"", pseudo:""};
 
-  constructor(private collegueService:DataService) { }
+  constructor(private collegueService:DataService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +20,8 @@ export class NouveauCollegueTemplateFormComponent implements OnInit {
   submit(){
     this.collegueService.creerCollegue(this.collegue).subscribe(x => console.log(x));
     this.collegue = {pseudo:"", photo:"", nom:"", prenom:""};
+    this.router.navigate(['accueil']);
   }
+
 
 }

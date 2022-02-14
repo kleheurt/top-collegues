@@ -24,6 +24,14 @@ export interface CreerCollegueDto{
   pseudo:string
 }
 
+export interface DetailCollegue{
+  nom:string,
+  prenom:string,
+  photo:string,
+  pseudo:string,
+  score:number
+}
+
 export enum Avis{
   AIMER=100,
   DETESTER=-100,

@@ -1,0 +1,11 @@
+<ng-container *ngIf="(collegue | async) as collegue">
+<div  class="card text-center rounded-0 border-dark" style="width: 18rem;">
+  <img class="card-img-top" [src]="collegue.photo">
+  <div class="card-body">
+    <h5 class="card-title">{{collegue.pseudo | uppercase}}</h5>
+    <p class="card-text">{{collegue.score | score }}</p>
+    <p class="card-text">Nom : {{collegue.nom}} </p>
+    <p class="card-text">Prénom : {{collegue.prenom}} </p>
+  </div>
+</div>
+</ng-container>

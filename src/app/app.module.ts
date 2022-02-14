@@ -16,6 +16,10 @@ import { RafraichirComponent } from './rafraichir/rafraichir.component';
 import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-template-form/nouveau-collegue-template-form.component';
 import { FormsModule } from '@angular/forms';
 import { NomPrenomValidatorDirective } from './validators/nom-prenom-validator.directive';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './app.routes';
+import { MenuComponent } from './menu/menu.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +34,16 @@ import { NomPrenomValidatorDirective } from './validators/nom-prenom-validator.d
     ConjuguerPipe,
     RafraichirComponent,
     NouveauCollegueTemplateFormComponent,
-    NomPrenomValidatorDirective
+    NomPrenomValidatorDirective,
+    MenuComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

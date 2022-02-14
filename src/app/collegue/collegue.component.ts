@@ -10,10 +10,12 @@ import { Avis, Collegue, VoteDto } from '../models';
 export class CollegueComponent implements OnInit {
 
   @Input() collegue!: Collegue;
+  urlDetail: string = "";
 
   constructor(private collegueService:DataService) { }
 
   ngOnInit(): void {
+    this.urlDetail = "/collegue/"+this.collegue.pseudo;
   }
 
   traiterAvis(val: number){

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError, pipe, map, Subject} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Collegue, CollegueDto, CreerCollegueDto, Vote, VoteDto } from './models';
+import { Collegue, CollegueDto, CreerCollegueDto, DetailCollegue, Vote, VoteDto } from './models';
 
 
 @Injectable({
@@ -49,5 +49,9 @@ export class DataService {
 
   creerCollegue(collegue: CreerCollegueDto): Observable<CreerCollegueDto>{
     return this.http.post<CreerCollegueDto>(this.url,collegue);
+  }
+
+  collegueParPseudo(pseudo: string): Observable<DetailCollegue>{
+    return this.http.get<DetailCollegue>(this.url+"/"+pseudo);
   }
 }
