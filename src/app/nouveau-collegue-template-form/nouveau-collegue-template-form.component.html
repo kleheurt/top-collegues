@@ -1,7 +1,7 @@
 <form appNomPrenomValidator (ng-submit)="submit()" #formCollegue="ngForm">
   <div class="row form-group mb-1">
     <label class="col-1">Pseudo</label>
-    <input class="x col-2" name="pseudo" [(ngModel)]="collegue.pseudo" #pseudo="ngModel" required >
+    <input appPseudoValidator #pseudoVal="ngModel" class="x col-2" name="pseudo" [(ngModel)]="collegue.pseudo" #pseudo="ngModel" required >
   </div>
   <div class="row form-group mb-1">
     <label class="col-1">Photo URL</label>
@@ -15,6 +15,7 @@
     <label class="col-1">Nom</label>
     <input class="col-2" name="nom" [(ngModel)]="collegue.nom" #nom="ngModel" required minlength="2">
   </div>
-  <div class="alert alert-danger" *ngIf="nom.dirty && formCollegue.errors && formCollegue.errors['nom'] ">Les noms et prénoms ne sauraient être identiques.</div>
+  <div class="col-3 alert alert-danger" *ngIf="pseudoVal.dirty && pseudoVal.errors && pseudoVal.errors['pseudoTrouve']">Pseudo déjà utilisé.</div>
+  <div class="col-3 alert alert-danger" *ngIf="nom.dirty && formCollegue.errors && formCollegue.errors['nom'] ">Les noms et prénoms ne sauraient être identiques.</div>
   <button [disabled]="!formCollegue.valid" type="submit" (click)="submit()" class="btn btn-outline-dark rounded-0 btn-sm">Créer</button>
 </form>

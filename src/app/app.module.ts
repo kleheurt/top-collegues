@@ -20,6 +20,7 @@ import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { MenuComponent } from './menu/menu.component';
 import { DetailComponent } from './detail/detail.component';
+import { PseudoValidatorDirective } from './validators/pseudo-validator.directive';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DetailComponent } from './detail/detail.component';
     NouveauCollegueTemplateFormComponent,
     NomPrenomValidatorDirective,
     MenuComponent,
-    DetailComponent
+    DetailComponent,
+    PseudoValidatorDirective
   ],
   imports: [
     BrowserModule,
