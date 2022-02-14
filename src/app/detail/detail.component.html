@@ -1,4 +1,4 @@
-<ng-container *ngIf="(collegue | async) as collegue">
+<ng-container *ngIf="(collegue | async) as collegue; else noData">
 <div  class="card text-center rounded-0 border-dark" style="width: 18rem;">
   <img class="card-img-top" [src]="collegue.photo">
   <div class="card-body">
@@ -9,3 +9,6 @@
   </div>
 </div>
 </ng-container>
+<ng-template #noData>
+  Pas de collègue
+</ng-template>
